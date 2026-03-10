@@ -12,8 +12,10 @@ public:
 	int GetCapacity() const;
 
 	void PrintAllItems() const;
+	
+	
 
-	//void PrintInfo() const;
+
 private:
 	T* pItems_;
 	int capacity_;
