@@ -18,8 +18,19 @@ int Item::GetPrice() const
 	return this->price_;
 }
 
+bool Item::operator<(const Item& other) const
+{
+	//return this->price_ < other.price_;
+	return compareItemsByPrice(*this, other);
+}
+
 std::ostream& operator<<(std::ostream& os, const Item& item)
 {
 	item.PrintInfo();
 	return os;
+}
+
+bool compareItemsByPrice(const Item& a, const Item& b)
+{
+	return a.GetPrice() < b.GetPrice();
 }

@@ -1,5 +1,8 @@
 #pragma once
 #include<iostream>
+#include <algorithm>
+class Item;
+
 template <typename T>
 class Inventory
 {
@@ -16,12 +19,9 @@ public:
 	//도전기능
 	void Assign(const Inventory<T>& other);//객체에 다른 객체의 내용을 덮어씁니다.
 	void Resize(int newCapacity); //기존에 들어있던 아이템들을 새 공간으로 모두 이사시킨 뒤, 낡은 메모리는 해제합니다. 
-	// 아이템을 넣으려는데 인벤토리가 꽉 찼다면? 프로그램을 멈추지 말고 Resize를 호출하여 기존 용량의 2배로 공간을 늘린 후 아이템을 추가합니다.
-	bool compareItemsByPrice(const T& a, const T& b);
-	//배열의 시작 주소(pItems_), 끝 지점(pItems_ + size_), 그리고 위에서 만든 비교 함수를 전달하여 가격순(오름차순)으로 정렬합니다.
+	void SortItems();// 가격순(오름차순) 정렬
 	
 	
-
 
 private:
 	T* pItems_;
@@ -90,6 +90,7 @@ inline void Inventory<T>::RemoveLastItem()
 	if (this->size_ != 0)
 	{
 		this->size_--;
+		std::cout << "삭제 완료" << std::endl;
 	}
 	else
 	{
@@ -159,5 +160,12 @@ inline void Inventory<T>::Resize(int newCapacity)
 		this->pItems_[i] = temp[i];
 	}
 	//복사한값들을 이제 새로 할당한 부분에 채워넣기
+}
+
+template<typename T>
+inline void Inventory<T>::SortItems()
+{
+	std::sort(pItems_, pItems_ + size_);
+	std::cout << "정렬 완료" << std::endl;
 }
 

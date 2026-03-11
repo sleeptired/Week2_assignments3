@@ -12,12 +12,10 @@ public:
 	int GetPrice() const;
 
 	friend std::ostream& operator<<(std::ostream& os, const Item& item);
+	bool operator<(const Item& other) const;
 private:
 	std::string name_ = "";
 	int price_ = 0;
 };
 
-//bool compareItemsByPrice(const Item& a, const Item& b) 
-//{
-//	return a.GetPrice() < b.GetPrice();
-//}
+bool compareItemsByPrice(const Item& a, const Item& b);
