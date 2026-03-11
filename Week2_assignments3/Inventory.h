@@ -44,6 +44,7 @@ inline Inventory<T>::Inventory(int capacity) :size_(0)
 	}
 
 	pItems_ = new T[capacity_];
+	std::cout << "인벤토리 생성" << std::endl;
 }
 
 template<typename T>
@@ -73,6 +74,7 @@ inline void Inventory<T>::AddItem(const T& item)
 	{
 		this->pItems_[size_] = item;
 		this->size_++;
+		std::cout << "아이템 추가완료" << std::endl;
 	}
 	else
 	{
@@ -81,6 +83,7 @@ inline void Inventory<T>::AddItem(const T& item)
 		this->Resize(this->capacity_ * 2);//capacity_를 2배 늘린거를 resize함수에 넣는다.
 		this->pItems_[size_] = item;
 		this->size_++;
+		std::cout << "아이템 추가완료" << std::endl;
 	}
 }
 

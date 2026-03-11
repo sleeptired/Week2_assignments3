@@ -17,10 +17,15 @@ int main()
 	//test.PrintAllItems();
 
 	Inventory<Item> test2(3);
+	std::cout << "test2ÀÇ Size:" << test2.GetSize() << " Capacity: " << test2.GetCapacity() << std::endl;
 	test2.AddItem(Item("Add", 10));
 	test2.AddItem(Item("ndd", 30));
 	test2.AddItem(Item("ddd", 20));
+	std::cout << "test2ÀÇ Size:" << test2.GetSize() << " Capacity: " << test2.GetCapacity() << std::endl;
 	test2.AddItem(Item("zdd", 5));
+	test2.AddItem(Item("edd", 1));
+	test2.RemoveLastItem();
+	std::cout << "test2ÀÇ Size:" << test2.GetSize() << " Capacity: " << test2.GetCapacity() << std::endl;
 	test2.PrintAllItems();
 	
 	Inventory<Item> test3(test2);
