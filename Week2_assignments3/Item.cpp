@@ -13,6 +13,11 @@ void Item::PrintInfo() const
 	std::cout << "[이름: " << this->name_ << ", 가격: " << this->price_ << "G]" << std::endl;
 }
 
+int Item::GetPrice() const
+{
+	return this->price_;
+}
+
 std::ostream& operator<<(std::ostream& os, const Item& item)
 {
 	item.PrintInfo();

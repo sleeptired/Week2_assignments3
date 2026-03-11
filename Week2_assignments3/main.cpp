@@ -2,6 +2,7 @@
 #include"Inventory.h"
 #include"Item.h"
 
+
 int main() 
 {
 	//Inventory<int> test(10);
@@ -15,10 +16,11 @@ int main()
 	//test.RemoveLastItem();
 	//test.PrintAllItems();
 
-	Inventory<Item> test2;
+	Inventory<Item> test2(3);
 	test2.AddItem(Item("Add", 10));
 	test2.AddItem(Item("ndd", 30));
 	test2.AddItem(Item("ddd", 30));
+	test2.AddItem(Item("zdd", 30));
 	test2.PrintAllItems();
 	
 	Inventory<Item> test3(test2);
