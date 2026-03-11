@@ -57,7 +57,7 @@ inline Inventory<T>::Inventory(const Inventory<T>& other)
 	{
 		pItems_[i] = other.pItems_[i];
 	}
-	std::cout << "인벤토리 복사 완료" << std::endl;
+	std::cout << "복사생성자로 인벤토리 복사 완료" << std::endl;
 }
 
 template<typename T>
@@ -141,7 +141,7 @@ inline void Inventory<T>::Assign(const Inventory<T>& other)
 	{
 		pItems_[i] = other.pItems_[i];
 	}
-	std::cout << "인벤토리 Assign 완료" << std::endl;
+	std::cout << "인벤토리 Assign 함수로 복사 완료" << std::endl;
 }
 
 template<typename T>
