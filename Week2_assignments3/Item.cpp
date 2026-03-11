@@ -15,7 +15,6 @@ void Item::PrintInfo() const
 
 std::ostream& operator<<(std::ostream& os, const Item& item)
 {
-	//os << "[이름: " << item.name_ << ", 가격: " << item.price_ << "G]";
 	item.PrintInfo();
 	return os;
 }
