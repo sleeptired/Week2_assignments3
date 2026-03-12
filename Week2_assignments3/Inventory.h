@@ -163,6 +163,8 @@ inline void Inventory<T>::Resize(int newCapacity)
 		this->pItems_[i] = temp[i];
 	}
 	//복사한값들을 이제 새로 할당한 부분에 채워넣기
+	delete[]temp;
+	temp = nullptr;
 }
 
 template<typename T>
